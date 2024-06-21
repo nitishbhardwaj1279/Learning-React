@@ -9,3 +9,6 @@
 
 //WE CAN WRITE REACT WITHOUT JSX ALSO ITS JUST JSX PROVIDE EASIER SYANTAX TO WRITE REACT CODE
 
+//we can have {} inside jsx and inside {} we can have any js code
+//we can have react element inside  fnal component or we can also have fnal component inside fnal component
+
