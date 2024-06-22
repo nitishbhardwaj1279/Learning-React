@@ -1,0 +1,15 @@
+how to give inline css in jsx
+
+By making stylecard,stylecard is a js object therefore when using stylecard in jsx we have
+to use {stylecard}
+
+const stylecard={
+    background-color:"Red";
+    font-size:"20px";
+}
+
+ /* //GIVING INLINE CSS IN JSX (not preferd)
+ //when giivng inline css we have to creeta stylecard ,a js object */
+ like   <div className="cardcontainer"  style={stylecard}>
+
+ //CONFIG DRIVEN DATA
