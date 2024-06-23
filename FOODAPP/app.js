@@ -27,24 +27,24 @@ const Header = () => {
     border: "1px solid black",
     backgroundColor: "#f0f0f0",
 
-    
   }
   const Rescard=(props)=>{
+    //destructuring
+    const {resdata}=props;
+    const {resname,src,cuisine,rating}=resdata;
     return (
         <div className="rescard">
             <div>
-                <img className="res-logo" src={props.src}></img>
-                <h3>{props.resname}</h3>
-                <h4>{props.cuisine}</h4>
-                <h5>{props.rating}</h5>
+                <img className="res-logo" src={src}></img>
+                <h3>{resname}</h3>
+                <h4>{cuisine}</h4>
+                <h5>{rating}</h5>
             </div>
-
         </div>
     );
-
   };
 
-  const restaurants = [
+  const list_of_rests= [
     {
       id: 1,
       src: "https://b.zmtcdn.com/data/pictures/8/20303438/6de68106976f96329d80d575cdf041e5.jpg?fit=around%7C750:500&crop=750:500;*,*",
@@ -112,15 +112,12 @@ const Header = () => {
 
                 <div className="cardcontainer">
                 {/* //passing props to func component */}
-                  <Rescard src="https://b.zmtcdn.com/data/pictures/8/20303438/6de68106976f96329d80d575cdf041e5.jpg?fit=around%7C750:500&crop=750:500;*,*"resname="Fun Bytes" cuisine="Burger,Pizza ,Shakes" rating="4.5"/ >
-                  <Rescard src="https://imageio.forbes.com/specials-images/imageserve/650867792b771ce527016623/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds"resname="Tim Hortons" cuisine="Bagels,Coffee,Wraps" rating="3.5"/>
-                  <Rescard src="https://cdn.britannica.com/08/193908-050-66767D57/view-Subway-restaurant-Bangkok-Thailand.jpg" resname="Subway" cuisine="Subs,Cookies,Salads,Rice and Wraps" rating="4.7"/>
-                  <Rescard src="https://spicyhutindianbistro.com/wp-content/uploads/2022/09/spicy-hut-restaurant-real-image1.jpg" resname="Indian Spicy Hut" cuisine="Dal-Fry,Butter Chicken" rating="4.5"/>
-                  <Rescard src="https://osmows.com/wp-content/uploads/2022/04/osmows-mobile-retina-logo.png" resname="Osmow's" cuisine="Shawarma,Kebabs" rating="4.0"/>
-                  <Rescard src="https://media.istockphoto.com/id/637275080/photo/mcdonalds-exterior.jpg?s=612x612&w=0&k=20&c=2boXi-q35Isycmmte3vpnyo3FTtnGrpo6TxHzh-EZ30=" resname="McDonald" cuisine="Fries,Icecream,Burgers,Wraps" rating="2.5"/>
-                  <Rescard src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKYoNYjvDxm2BzA5zIhpGPBFk--EizC09hlw&ss" resname="A&W" cuisine="Burgers,Nuggets,Wings" rating="2.9"/>
-                  <Rescard src="https://media-cdn.tripadvisor.com/media/photo-s/29/ba/1f/8c/rasoi-indian-restaurant.jpg" resname="Rasoi" cuisine="PavBhaji,Paneer Butter Masala ,Chana Masala" rating="3.3"/>
-                       
+
+                {
+                    list_of_rests.map((restaurant) => (
+                      <Rescard key={restaurant.id} resdata={restaurant} />
+                    ))
+                };
                 </div>
         </div>
     );
